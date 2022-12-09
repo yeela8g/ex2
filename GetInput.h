@@ -1,4 +1,7 @@
 #include "InputValidation.h"
+#include <fstream>
+#include <list>
+
 
 class GetInput{ //this class get input from user and catch exception from the stream, then send to validation class.
     private:
@@ -10,6 +13,7 @@ class GetInput{ //this class get input from user and catch exception from the st
     public:
         GetInput(); //constructor
         void input(); // gets input and sent to validation
+        void fileInput(std::string path, std::list<std::string> (&arr) [2]); //create list of strings which reprsent vectors
         Vector getV1(); //getter
         Vector getV2(); //getter
         bool getValid_toMain(); // getter

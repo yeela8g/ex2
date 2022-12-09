@@ -1,18 +1,27 @@
 
 #include "GetOutput.h"
 
+int main(int argc, char* argiv[]){
 
-int main(){
-    
+    std::string path = argiv[2];   
     GetInput in;//input validation
-    in.input();//get input and validate it.
-    if(in.getValid_toMain() == false){
-        exit(1);
+    std::list<std::string> featuresLabelsArr[2];
+    in.fileInput(path, featuresLabelsArr);
+
+    while(1){
+    std::string xStr;
+    std::getline(std::cin,xStr); //get features test-sample, as a sentence (with " ")
+    std::list<Vector> xValidList;
+    std::list<std::string> yValidList;
+    std::list<std::string>::iterator itrY = featuresLabelsArr[1].begin();
+    for(std::list<std::string>::iterator itrX = featuresLabelsArr[0].begin(); itrX != featuresLabelsArr[0].end(); itrX++){
+        in.input(*itrX, xStr);
+        if(in.getValid_toMain() == true){
+            Vector v1=in.getV1();  //vectors creation
+            xValidList.push_back(v1);
+            yValidList.push_back(*itrY);
+            itrY++;
+        }
     }
-    Vector v1=in.getV1();// Distance calculation
-    Vector v2=in.getV2();
-
-    GetOutput output; // print distances
-    output.printDist(v1,v2);
-
+    Vector xVect=in.getV2();
 }
