@@ -25,3 +25,4 @@ int main(int argc, char* argiv[]){
     }
     Vector xVect=in.getV2();
 }
+}
