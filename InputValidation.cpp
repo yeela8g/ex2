@@ -45,29 +45,25 @@ void InputValidation::vectorSize(Vector v1, Vector v2){
     std::stringstream sstrim(str); //streaming the input
     std::string newStr; //new string to contain each word from the input string which be converted to double
        try{
-            while(std::getline(sstrim,newStr,' '))
-            {
+            while(std::getline(sstrim,newStr,' ')){
                 int pointCount=0; //prevent two points like 2..0
                 for (int i = 0; i < newStr.length(); i++){ 
                     if(newStr[i]=='.'){ // counting points
                         pointCount++;
                     }
                     if (!isdigit(str[i]) && newStr[i]!='.'){ //make sure it's a digit or a point
-                        return setValid(false);
-                }
-            }if (pointCount>1){ //prevent two points like 2..0
+                       return setValid(false);
+                }if (pointCount>1){ //prevent two points like 2..0
                     return setValid(false);
                 }
-
                 if (newStr[newStr.length()-1] == '.'){ //prevent 2.
                     return  setValid(false);
                 }
-
                 stod(newStr);
+                }
             }
-        }
-        catch (...) {
+        }catch (...) {
             return setValid(false);
-    }
+        }
 }
  

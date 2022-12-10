@@ -15,10 +15,10 @@ bool GetInput::getValid_toMain(){
     }
 
 void GetInput::input(std::string str1, std::string str2){
-    try{
-           
-            std::string str2;
-            std::getline(std::cin,str2);//get str2 as a sentence (with " ")
+        valid_toMain = true;
+        check.setValid(true);
+        
+        try{
             check.isNumber(str1); //check input is digit
             check.isNumber(str2);
 
