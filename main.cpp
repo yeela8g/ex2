@@ -1,9 +1,11 @@
 
-#include "GetOutput.h"
+#include "Knn.h"
 
 int main(int argc, char* argiv[]){
 
-    std::string path = argiv[2];   
+    int k =std::stoi(argiv[1]);
+    std::string path = argiv[2];
+    std::string distanceMatric = argiv[3];
     GetInput in;//input validation
     std::list<std::string> featuresLabelsArr[2];
     in.fileInput(path, featuresLabelsArr);
@@ -24,5 +26,7 @@ int main(int argc, char* argiv[]){
         }
     }
     Vector xVect=in.getV2();
+    Knn knn(xValidList,yValidList,xVect,k,distanceMatric);
+    knn.predict();
 }
 }
