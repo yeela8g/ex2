@@ -1,34 +1,29 @@
 # Ex1_2
 ---
 ## Description
-the purpose of the program in this milestone is to calculate different distance formulas between Vectors.
-we have created vector class ('Vector') and class ('Dist') who performs distance calculations over two vector objects.
-the user is ask to insert equal number of values for both vectors so we created ('InputValidation') class to enforce it. 
-The requsted input format is numbers separated with space (" ") for each vector, and the program output is 5 distances caculation results between the two Vectors, for example:
-![image](https://user-images.githubusercontent.com/118124478/203364075-de62b59b-ed04-400a-b6df-ae94ecf8a4c2.png)
+the purpose of the program in this milestone is to impement KNN machine learning algorithm.Given a classified dataset, the KNN algorithm predict the label of test a sample by its similarity to features of other samples. it calculates similarity by distance metrics, choose the k closest samples to the test sapmle with the lowest distances, and returns the most common label among them.
 
-(adding one space (" ") after the last index in the Vector is optional).
+the input of the algorithm is:
+- k(number of closest neighbors to predict by them)
+- file path (with the classified dataset)
+- distance metric (auclidean/manhatten/chebishev/canberra/minkovski formula)
+- features of the test sample
+and the output is the predicted label of the sample.
+for example: ![image](https://user-images.githubusercontent.com/118124478/206866038-b80ab769-8a18-4c6a-bab2-71b6956416d9.png)
 
-
-for calculating minkovski distance we chose constant p = 2;
 
 ## Optimization
-- created dedicated class ('GetOutput') for printing all distances with the desired floating point.
-- created dedicated class ('GetInput') for input receiving treatment.
-> these first two designs optimized our code by maintaining the main class simple and clean.
-- function method of calculating the absolute value of the difference between vectors.
-- minkovski calculation function who gets different p values as a input in order to be able to calculate manhattan and euclidean formulas as well.
-> these last two optimizations prevented code duplication.
+- created dedicated class ('KnnManager') for controlling the algorithm flow.
+> this optimized our code by maintaining the main class simple and clean.
+
+## edge cases treatment
+- in case of equality between labels the knn will select the first Label that appears in the dataset.
+- in case of sample in the dataset with invalid values, the program will print a message and will keep predicting without it.
+- in case of invalid input of one of the program's three arguments  (k/path/distance metric), a runtime error will be thorwed and the program will end.
+- for calculating minkovski distance we chose constant p = 2;
+
 
 ## How to use
-for running on university server and getting a.out file, use the command:
-### g++ -std=c++11 *.cpp
-run **(./a.out)**
 
->for example:
-
-
-
-![image](https://user-images.githubusercontent.com/118124478/202859030-70110109-bd3d-4f9a-904f-41a5451b0c5f.png)
 
 
