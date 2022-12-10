@@ -33,4 +33,11 @@ int main(int argc, char* argiv[]){
         }
     }
 
+/* for debuge
+    GetInput in;//input validation
+    std::string xStr;
+    std::getline(std::cin,xStr); 
+    in.input("13.2 1.78", xStr);
+    */
+
 }
