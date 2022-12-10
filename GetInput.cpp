@@ -15,7 +15,7 @@ bool GetInput::getValid_toMain(){
     }
 
 void GetInput::input(std::string str1, std::string str2){
-        valid_toMain = true;
+        valid_toMain = true; //reseting the validation flag for new X_I
         check.setValid(true);
         
         try{

@@ -1,7 +1,7 @@
 #include "Knn.h"
 
  Knn::Knn(std::list<Vector> xList1,std::list<std::string> yList1,Vector x1,int k1,std::string matric1){
-    xList=xList1;
+    xList=xList1; 
     yList=yList1;
     x=x1;
     k=k1;
@@ -35,6 +35,9 @@ void Knn::predict(){
              for(std::list<Vector>::iterator itrX = xList.begin(); itrX != xList.end(); itrX++){
                 distanceMetx.push_back(distance.MinkowskiDistance(*itrX,x,distance.p));
              }
+        }
+        else{
+            throw std::runtime_error("wrong distance metric");
         }
         // find K closest labeles
         std::string closestKlableArr[k]; //initiation array for k closest labels

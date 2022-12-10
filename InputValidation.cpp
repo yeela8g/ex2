@@ -51,8 +51,9 @@ void InputValidation::vectorSize(Vector v1, Vector v2){
                     if(newStr[i]=='.'){ // counting points
                         pointCount++;
                     }
-                    if (!(newStr[i]=='.') &&(!isdigit(str[i]))){ //make sure it's a digit or a point
+                    if (!(newStr[i]=='.') &&(!isdigit(newStr[i]))){ //make sure it's a digit or a point
                        return setValid(false);
+                    }
                 }if (pointCount>1){ //prevent two points like 2..0
                     return setValid(false);
                 }
@@ -60,7 +61,7 @@ void InputValidation::vectorSize(Vector v1, Vector v2){
                     return  setValid(false);
                 }
                 stod(newStr);
-                }
+                
             }
         }catch (...) {
             return setValid(false);
