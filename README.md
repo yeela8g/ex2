@@ -14,7 +14,7 @@ for example: ![image](https://user-images.githubusercontent.com/118124478/206866
 
 ## Optimization
 - created dedicated class ('KnnManager') for controlling the algorithm flow.
-> this optimized our code by maintaining the main class simple and clean.
+>this optimized our code by maintaining the main class simple and clean.
 
 ## edge cases treatment
 - in case of equality between labels the knn will select the first Label that appears in the dataset.
@@ -24,6 +24,13 @@ for example: ![image](https://user-images.githubusercontent.com/118124478/206866
 
 
 ## How to use
+for running on university u2 server use the commands:
+### $make
+### $./output [k] [path] [distance-metric]
+>for example:
+![image](https://user-images.githubusercontent.com/118124478/206895893-77e1c9b2-d177-4eb1-b089-2f2cb0197057.png)
+
+
 
 
 
