@@ -1,7 +1,7 @@
 # Ex1_2
 ---
 ## Description
-the purpose of the program in this milestone is to impement KNN machine learning algorithm.Given a classified dataset, the KNN algorithm predict the label of test a sample by its similarity to features of other samples. it calculates similarity by distance metrics, choose the k closest samples to the test sapmle with the lowest distances, and returns the most common label among them.
+the purpose of the program in this milestone is to implement KNN machine learning algorithm.Given a classified dataset, the KNN algorithm predict the label of test a sample by its similarity to features of other samples. it calculates similarity by distance metrics, choose the k closest samples to the test sapmle with the lowest distances, and returns the most common label among them.
 
 the input of the algorithm is:
 - k (number of closest neighbors to predict by them)
